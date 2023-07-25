@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-1</title>
+</head>
+<body>
+    <h1>Нехай x(o) = 1, x(i) = x(i - 1) + 2(i) де i = 1, 2,... Визначити x(10). Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів.</h1>
+
+    <script>
+
+        //Рекурсивний алгоритм:
+        function recursiveX(i) {
+            if (i === 1) return 1;
+            else return recursiveX(i - 1) + 2 * i;
+        }
+
+        const resultRecursive = recursiveX(10);
+        document.write(`<h2>Результат (рекурсивний): ${resultRecursive} </h2>`);
+
+//-----------------------------------------------------------------------
+
+        //Нерекурсивний алгоритм:
+        function nonRecursiveX(n) {
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+            result += 2 * i;
+        }
+        return result;
+        }
+
+        const resultNonRecursive = nonRecursiveX(10);
+        document.write(`<h2>Результат (нерекурсивний): ${resultNonRecursive} </h2>`);
+
+    </script>
+</body>
+</html>

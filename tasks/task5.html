@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-5</title>
+</head>
+<body>
+    <h1>Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і робиться перевірка.</h1>
+
+    <script>
+        // 1. Вводимо дані
+        setInterval(() => {
+            let a = 1 + Math.floor(Math.random() * 100);
+            let b = 1 + Math.floor(Math.random() * 100);
+            let question = a + b
+            let answer = parseInt(prompt(`Скількі буде ${a} + ${b} = ?`))
+            if (answer === question) alert('КРАСАВА!!!')
+            else alert(`ЛУЗЕР!!! ${a} + ${b} = ${question}`)
+        }, 10000);
+
+    </script>
+</body>
+</html>

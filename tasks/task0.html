@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-0</title>
+</head>
+<body>
+    <h1>Реалізувати рекурсивну функцію знаходження степеня числа а: <br>
+        a(n) = step(a, n) = {a, якщо n = 1, step(a, n - 1) * n, якщо n > 1}</h1>
+
+    <script>
+
+        // Вводимо дані
+        let base = parseInt(prompt('Введіть число від 1 до 10'))
+        let exponent = parseInt(prompt('Введіть число від 1 до 10'))
+
+        function degree(a, n) {
+            if (n === 1)
+                return a
+            else (n > 1)
+                return degree(a, n - 1) * a
+        }
+
+        // Виводимо результат
+        let result = degree(base, exponent)
+        document.write(`<h2>${base} ^ ${exponent} = ${result}</h2>`)
+
+    </script>
+</body>
+</html>

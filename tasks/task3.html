@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-3</title>
+</head>
+<body>
+    <h1>З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими викликами видавати по одне значення від заданого мінімального до заданого максимального. Якщо значення досягне максимального, то наступним буде мінімальне значення. З використанням цієї функції реалізувати перебір номерів місяців.</h1>
+
+    <script>
+
+        //Знаходимо результат
+        function getSequence(startNum = 0, endNum = 12) {
+        let nextNum = startNum
+        function getNextNum() {
+            nextNum = nextNum === endNum ? 1 : ++nextNum
+            return nextNum
+        }
+        return getNextNum
+        }
+
+        //3. Виводимо результат
+        let sequence = getSequence()
+        for (let i = 0; ; i++) {
+            const nextNumber = sequence()
+            let confirmed = confirm(nextNumber)
+            if (!confirmed) {
+                alert('Bye!!!')
+                break;
+            }
+            document.write(`<h3>${nextNumber}</h3>`)
+        }
+
+//------------------------------------------------------------------
+
+        // 2. Знаходимо результат
+        // function getSequence(startNum = 0, endNum = 12) {
+        //     let nextNum = startNum;
+        //     function getNextNum() {
+        //         nextNum = nextNum === endNum ? 1 : ++nextNum;
+        //         return nextNum;
+        //     }
+        //     return getNextNum;
+        // }
+
+        // // 3. Виводимо результат
+        // let sequence = getSequence();
+        // for (let i = 0; i < 15; i++) {
+        //     document.write(`<h3>${sequence()}</h3>`);
+        // }
+
+    </script>
+</body>
+</html>

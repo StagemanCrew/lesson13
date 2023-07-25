@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-4</title>
+</head>
+<body>
+    <h1>З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими викликами видавати по одну букву наперед заданого слова. З використанням нього розробити гру «Перекладач». Виводимо для користувача опис цього слова і по одну букву користувач вводить переклад цього слова. Підрахувати кількість вгаданих букв.</h1>
+
+    <script>
+
+        function getLetterInWord(word, i) {
+        if (i >= 0 && i < word.length) return word[i]
+        else return null
+        }
+
+        function translator(word, description) {
+            alert(`Перекладіть англійською мовою: ${description} (${word.length} букв)`)
+            let counter = 0
+            let userLettersArr = []
+            for (let letterIndex = 0; letterIndex < word.length; letterIndex++) {
+                const userLetter = prompt(`Введіть ${letterIndex + 1} букву перекладу`).toLowerCase()
+                const correctLetter = getLetterInWord(word, letterIndex)
+                userLettersArr.push(userLetter)
+                if (correctLetter === userLetter) counter++
+            }
+            return [userLettersArr, counter]
+        }
+
+        let word = 'spring'
+        let description = 'Одна з чотирьох пір року між зимою та літом, характерна для помірних широт'
+        let [userLettersArr, counter] = translator(word, description)
+
+        document.write(`<h2>
+            Переклад слова: ${word}. <br> Ви ввели букви: ${userLettersArr}. Кількість правильно відгаданих букв: ${counter}
+        </h2>`)
+
+//------------------------------------------------------
+
+                    // //--- Створити ітератор по літерам слова
+        // function getLettersInWord(word) {}
+        // function translator(word, description) {
+        //     let taskInfo = alert(
+        //     `Перекладіть англійською мовою: ${description} (${word.length} букв)`
+        //     )
+        //     let wordInLetters = getLettersInWord(word)
+        //     let counter = 0
+        //     let userLettersArr = []
+        //     for (let letter = 0; letter < word.length; letter++) {
+        //     const userLetter = prompt(
+        //         `Введіть ${letter + 1} букву перекладу`
+        //     ).toLowerCase()
+        //     const wrightLetter = wordInLetters()
+
+        //     userLettersArr.push(userLetter)
+        //     if (wrightLetter === userLetter) counter++
+        //     }
+        //     return [userLettersArr, counter]
+        // }
+        // let word = 'spring'
+        // let description = 'Oдна з чотирьох пір року між зимою та літом, характерна для помірних широт'
+        // let [userLettersArr, counter] = translator(word, description)
+        // document.write(
+        //     `Переклад слова: ${word}. &lt;br&gt; Ви ввели букви: ${userLettersArr}.
+        // Кількість правильно вгаданих букв: ${counter}`
+        // )
+
+//------------------------------------------------------
+
+    </script>
+</body>
+</html>
