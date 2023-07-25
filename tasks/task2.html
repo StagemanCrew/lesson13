@@ -12,6 +12,7 @@
 
         let sortedArray = [1, 3, 5, 7, 9, 11, 13, 15]
         let targetNum = parseInt(prompt('Введіть число від 0 до 15.'))
+        document.write(`<h2>let sortedArray = [1, 3, 5, 7, 9, 11, 13, 15] </h2>`)
 
         function binarySearchRecursive(sortedArray, target, left = 0, right = sortedArray.length - 1) {
             if (left > right) return -1
